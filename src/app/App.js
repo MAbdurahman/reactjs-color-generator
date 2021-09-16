@@ -6,7 +6,7 @@ export default function App() {
 	//**************** variables ****************//
 	const [color, setColor] = useState('');
 	const [error, setError] = useState(false);
-	const [list, setList] = useState(new Values('#f15025').all(10));
+	const [list, setList] = useState(new Values('#d3d3d3').all(10));
 	//**************** functions ****************//
 	const handleSubmit = e => {
 		e.preventDefault();
@@ -14,6 +14,10 @@ export default function App() {
 			let colors = new Values(color).all(10);
 			setList(colors);
 		} catch (error) {
+         setTimeout(() => {
+            setError(false);
+      
+         }, 3000);
 			setError(true);
 			console.log(error);
 		}
@@ -27,7 +31,7 @@ export default function App() {
 						type='text'
 						value={color}
 						onChange={e => setColor(e.target.value)}
-						placeholder='#f15025'
+						placeholder='#d3d3d3'
 						className={`${error ? 'error' : null}`}
 					/>
 					<button className='btn' type='submit'>
