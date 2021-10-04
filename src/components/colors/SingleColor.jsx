@@ -4,6 +4,7 @@ import rgbToHex from './../../utils/utils';
 const SingleColor = ({ rgb, weight, index, hexColor }) => {
 	const [alert, setAlert] = useState(false);
 	const bcg = rgb.join(',');
+	// eslint-disable-next-line 
 	const hex = rgbToHex(...rgb);
 	const hexValue = `#${hexColor}`;
 	useEffect(() => {
